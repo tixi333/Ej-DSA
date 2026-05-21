@@ -1,6 +1,7 @@
 def cuenta_regresiva(n):
     if n == 0:
-        return "boom!"
+        print("boom")
+    
     else:
         print(n)
         cuenta_regresiva(n - 1)
