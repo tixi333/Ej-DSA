@@ -1,3 +1,6 @@
+import time
+from listas import crear_lista
+
 def insertionSort(arr):
     for i in range(1, len(arr)):
         numC = arr[i] #numero a comparar
@@ -16,7 +19,14 @@ def insertionSort(arr):
         arr[j + 1] = numC
     
     return arr
-        
-        
-arr = [73, 5, 91, 28, 64, 12, 100, 47, 3, 86]
-print(insertionSort(arr))
+
+def main(largo):
+    total = []
+    for i in largo:
+        lista = crear_lista(i)
+        print(lista)
+        inicio = time.perf_counter()
+        insertionSort(lista)
+        fin = time.perf_counter()
+        total.append(fin - inicio)
+    return total

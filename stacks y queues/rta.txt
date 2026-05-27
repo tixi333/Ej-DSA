@@ -1,0 +1,4 @@
+1- Va a devolver el primer valor ingresado que no fue eliminado, el 5.
+2- stack/queue
+3- ..
+4- recursividad_stack
