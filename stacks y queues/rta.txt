@@ -2,3 +2,4 @@
 2- stack/queue
 3- ..
 4- recursividad_stack
+5- Tiene 22 elementos ya que de los 15 enqueue solo 10 fueron efectivos y eliminados.
