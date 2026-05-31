@@ -24,4 +24,4 @@ def peces(A,B):
     
 A = [4, 3, 2, 1, 5]
 B = [0, 1, 0, 0, 0]
-peces(A,B)
+print(f"peces con vida: {peces(A,B)}")
