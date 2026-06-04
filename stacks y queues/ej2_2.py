@@ -1,5 +1,5 @@
 def peces(A,B):
-    abajo = []
+    abajo = [] #stack
     e = 0
     while e < len(A):
         if B[e] == 1:
