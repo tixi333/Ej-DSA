@@ -1,0 +1,5 @@
+1- Ventajas: no es necesario hacer shifting al eliminar un elemento ni que los nodos esten uno al lado del otro.
+   Desventajas: mayor espacio en la memoria, no se puede acceder directamente al elemento, se debe recorrer desde el Head
+
+2- No es conveniente ya que debe recorrer la lista una vez antes de comenzar a dividir segun el largo de la lista.
+
