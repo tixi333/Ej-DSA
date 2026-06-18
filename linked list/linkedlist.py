@@ -125,9 +125,7 @@ class singlyLinkedList:
             current = current.pointer
         
     def invert(self):
-        
-            
-            
+        pass
 
 singly = singlyLinkedList()
 """
