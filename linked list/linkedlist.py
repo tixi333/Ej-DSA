@@ -37,11 +37,34 @@ class singlyLinkedList:
                         
     def sort_linkedlist(self):
         if self.head == None:
+            print("a")
             return "No enough nodes to sort"
         
         else:
-            pass
-    
+            
+            length = 0
+            current = self.head
+
+            while current:
+                length += 1
+                current = current.pointer
+            
+            for _ in range(length - 1):
+                current = self.head
+
+                while current.pointer:
+                    if current.data > current.pointer.data:
+                        current.data, current.pointer.data = (
+                            current.pointer.data,
+                            current.data
+                        )
+
+                    current = current.pointer
+                    
+                
+                
+            return length
+                
     def delete_node(self,value):
         
         if self.head == None: # si no hay elementos 
@@ -87,7 +110,7 @@ class singlyLinkedList:
                 current = current.pointer
                 contador +=1
         
-        return f"linked list has {contador} nodes"
+        return contador
     
     def insert_node(self, value, previous):
         new_node = Nodo(value)
@@ -100,21 +123,29 @@ class singlyLinkedList:
                 return "inserted"
 
             current = current.pointer
+        
+    def invert(self):
+        
             
             
 
 singly = singlyLinkedList()
-
+"""
 print(f"is empty:", singly.is_empty())
 singly.sort_linkedlist()
 print(singly.delete_node(3))
 
 print(singly.search_node(3))
-
+"""
 singly.create_newnode(2)
-singly.create_newnode(4)
+singly.create_newnode(8)
 singly.create_newnode(5)
+singly.create_newnode(4)
 
+print(singly.sort_linkedlist())
+print(singly.print_linkedlist())
+
+"""""
 print(singly.insert_node(3,2))
 print(singly.get_size())
 
@@ -123,7 +154,7 @@ print(singly.print_linkedlist())
 print(singly.delete_node(4))
 print(singly.search_node(5))
 print(singly.is_empty())
-
+"""""
 # -----------------------------------------------------------------------------
 
 class Nodo2:
