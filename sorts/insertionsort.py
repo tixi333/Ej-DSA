@@ -2,7 +2,9 @@ import time
 from listas import crear_lista
 
 def insertionSort(arr):
-    for i in range(1, len(arr)):
+    n = len(arr)
+    for i in range(n):
+        
         numC = arr[i] #numero a comparar
         j = i - 1 # posicion del numero a la izquierda (numI)
         
