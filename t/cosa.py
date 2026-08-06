@@ -1,3 +1,5 @@
+from archivo import in_order, post_order, pre_order, Nodo
+
 class Stack:
     def __init__(self):
         self.items = []
@@ -19,36 +21,20 @@ class Stack:
         size = len(self.items)
         return size
 
-class Nodo:
-    def __init__(self, data):
-        self.data = data
-        self.r_child = None
-        self.l_child = None
-
-def post_order(node):
-    actual = node
-    if actual is None:
-        return
-    post_order(actual.l_child)
-    post_order(actual.r_child)
-    print(actual.data)
-
-def eso (exp):
+def parser (exp):
     stack = Stack()
     conj = exp.split()
     for e in conj:
         
         nodo = Nodo(e)
-        if e in ["+","-","*"]:
-            print(nodo.data)
+        if e in "+-*":
             nodo.r_child = stack.pop()
             nodo.l_child = stack.pop()
             stack.push(nodo)
         else:
             stack.push(nodo)
-        print(stack.peek())
 
     am = stack.peek()
     post_order(am)
 
-eso("4 5 + 5 3 - *")
+parser("4 5 + 5 3 - *")
