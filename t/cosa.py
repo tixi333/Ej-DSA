@@ -21,20 +21,33 @@ class Stack:
         size = len(self.items)
         return size
 
+def calc (node):
+
+    if node.data == "+":
+        return calc (node.l_child) + calc(node.r_child)
+    elif node.data == "-":
+        return calc (node.l_child) - calc(node.r_child)
+    elif node.data == "*":
+        return calc (node.l_child) * calc(node.r_child)
+    elif node.data == "/":
+        return calc (node.l_child) / calc(node.r_child)
+    else:
+        return node.data
+
 def parser (exp):
     stack = Stack()
     conj = exp.split()
     for e in conj:
         
         nodo = Nodo(e)
-        if e in "+-*":
+        if e in "+-*/":
             nodo.r_child = stack.pop()
             nodo.l_child = stack.pop()
             stack.push(nodo)
         else:
             stack.push(nodo)
+    return stack.pop()
 
-    am = stack.peek()
-    post_order(am)
-
-parser("4 5 + 5 3 - *")
+expresion = "22 7 - 4 * 5 + 5 2 - /"
+arbol = parser(expresion)
+print(calc(arbol))
