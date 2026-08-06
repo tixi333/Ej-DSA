@@ -4,12 +4,6 @@ class Nodo:
         self.r_child = None
         self.l_child = None
 
-n1 = Nodo("raiz")
-n2 = Nodo("hijo izq")
-n3 = Nodo("hijo derecho")
-n4 = Nodo("nieto izq")
-n5 = Nodo ("nieto derecho")
-
 def in_order(node):
     actual = node
     if actual is None:
