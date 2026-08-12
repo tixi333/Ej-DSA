@@ -1,4 +1,5 @@
-from archivo import in_order, post_order, pre_order, Nodo
+from clasenodo import Nodo
+from funciones import *
 
 class Stack:
     def __init__(self):
@@ -20,7 +21,7 @@ class Stack:
     def size(self):
         size = len(self.items)
         return size
-
+    
 def calc (node):
 
     if node.data == "+":

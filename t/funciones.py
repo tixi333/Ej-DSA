@@ -1,8 +1,4 @@
-class Nodo:
-    def __init__(self, data):
-        self.data = data
-        self.r_child = None
-        self.l_child = None
+from collections import deque
 
 def in_order(node):
     actual = node
@@ -28,5 +24,21 @@ def post_order(node):
     post_order(actual.r_child)
     print(actual.data)
     
-def level_order(node):
-    pass
+
+def level_order(root):
+    if not root:
+        return []
+    
+    result = []
+    queue = deque([root])
+    
+    while queue:
+        node = queue.popleft()
+        result.append(node.data)
+        
+        if node.l_child:
+            queue.append(node.l_child)
+        if node.r_child:
+            queue.append(node.r_child)
+            
+    return result
